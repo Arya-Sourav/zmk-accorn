@@ -1,16 +1,8 @@
-# No whitespace after the comma or in part name!
-config ACCORNE_CENTRAL_DONGLE
-    def_bool $(shields_list_contains,accorne_central_dongle)
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
 
-config ACCORNE_CENTRAL_LEFT
-    def_bool $(shields_list_contains,accorne_central_lt)
+config SHIELD_CORNE_LEFT
+    def_bool $(shields_list_contains,corne_left)
 
-#config ACCORNE_CENTRAL_RIGHT
-#    def_bool $(shields_list_contains,accorne_central_rt)
-
-config ACCORNE_PERIPHERAL_LEFT
-    def_bool $(shields_list_contains,accorne_peri_lt)
-
-config ACCORNE_PERIPHERAL_RIGHT
-    def_bool $(shields_list_contains,accorne_peri_rt)
-
+config SHIELD_CORNE_RIGHT
+    def_bool $(shields_list_contains,corne_right)

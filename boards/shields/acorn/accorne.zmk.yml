@@ -1,17 +1,15 @@
 file_format: "1"
-id: accorne
-name: accorne
+id: corne
+name: Corne
 type: shield
-#url:
-exposes: [i2c_oled, spi_oled]
-siblings:
-#  - accorne_central_dongle
-  - accorne_central_left
- # - accorne_peripheral_left
-  - accorne_peripheral_right
+url: https://github.com/foostan/crkbd/
+requires: [pro_micro]
+exposes: [i2c_oled]
 features:
   - keys
-  - encoder
   - display
-  - ZMK_studio
   - underglow
+  - studio
+siblings:
+  - corne_left
+  - corne_right

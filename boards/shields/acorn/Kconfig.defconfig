@@ -1,58 +1,29 @@
-if SHIELD_ACCORNE_CENTRAL_LT || SHIELD_ACCORNE_CENTRAL_DONGLE
+if SHIELD_CORNE_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Corne"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-#if SHIELD_ACCORNE_CENTRAL_DONGLE
-#
-#config ZMK_KEYBOARD_NAME
-#    default "accorne.dongle"
-#
-#endif
-
-if SHIELD_ACCORNE_CENTRAL_LT
-
-config ZMK_KEYBOARD_NAME
-    default "accorne.central"
-
-endif
-
-#if SHIELD_ACCORNE_PERI_LT
-#
-#config ZMK_KEYBOARD_NAME
-#    default "accorne.lt"
-#
-#endif
-
-if SHIELD_ACCORNE_PERI_RT
-
-config ZMK_KEYBOARD_NAME
-    default "accorne.rt"
-
-endif
-
-if SHIELD_ACCORNE_CENTRAL_DONGLE || SHIELD_ACCORNE_CENTRAL_LT || SHIELD_ACCORNE_PERI_LT || SHIELD_ACCORNE_PERI_RT
+if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
 
 config ZMK_SPLIT
     default y
 
+if ZMK_DISPLAY
+
 config I2C
     default y
-
-if ZMK_DISPLAY
 
 config SSD1306
     default y
 
-choice LV_FONT_DEFAULT
-    default LV_FONT_DEFAULT_MONTSERRAT_12
-endchoice
+endif # ZMK_DISPLAY
 
-choice ZMK_LV_FONT_DEFAULT_SMALL
-    default ZMK_LV_FONT_DEFAULT_SMALL_MONTSERRAT_12
-endchoice
+if LVGL
 
 config LV_Z_VDB_SIZE
     default 64
@@ -67,6 +38,6 @@ choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
 endchoice
 
-endif # ZMK_DISPLAY
+endif # LVGL
 
 endif
